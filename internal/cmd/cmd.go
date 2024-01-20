@@ -26,8 +26,8 @@ var (
 			if !gfile.Exists("./data/sessions") {
 				gfile.Mkdir("./data/sessions")
 			}
-			s.SetSessionStorage(gsession.NewStorageFile("./data/sessions", 3600*24*7*time.Second))
-			s.SetSessionCookieMaxAge(3600 * 24 * 7 * time.Second)
+			s.SetSessionStorage(gsession.NewStorageFile("./data/sessions"， 1800*time.Second))
+			s.SetSessionCookieMaxAge(1800 *  time.Second)
 			if config.PORT(ctx) != 0 {
 				s.SetPort(config.PORT(ctx))
 			}
